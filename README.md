@@ -1,6 +1,8 @@
 # Speed Dating Predictor
 Welcome to the Speed Dating Predictor project! This application predicts whether two people would be a match based on several criteria: attractiveness, fun, shared interest, sincerity, and intelligence. Users can input values between 0 and 10 for each criterion, and the application will return a response indicating whether it is a match or not.
 
+![sss](https://github.com/user-attachments/assets/f968fdcd-1505-40df-9c59-21bde289bd9f)
+
 ## Features
 - User-friendly interface to input values for attractiveness, fun, shared interest, sincerity, and intelligence.
 - Predicts whether it's a match based on the input values.
