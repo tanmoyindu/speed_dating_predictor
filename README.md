@@ -28,6 +28,8 @@ To run this project locally, follow these steps:
 
 ## Libraries Used
 Flask: A micro web framework for Python.
+
 NumPy: A package for scientific computing with Python.
+
 scikit-learn: A machine learning library for Python.
 
