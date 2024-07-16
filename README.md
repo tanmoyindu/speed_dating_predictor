@@ -3,9 +3,7 @@ Welcome to the Speed Dating Predictor project! This application predicts whether
 
 ## Features
 - User-friendly interface to input values for attractiveness, fun, shared interest, sincerity, and intelligence.
-- 
 - Predicts whether it's a match based on the input values.
-- 
 - Validates input values to ensure they are between 0 and 10.
 
   ## Installation
@@ -25,11 +23,14 @@ To run this project locally, follow these steps:
    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
 4. **Install Required Libraries**
    Install the necessary libraries listed in requirements.txt:
+   
    pip install -r requirements.txt
 
 ## Usage
 -Open the application in your browser.
+
 -Enter values between 0 and 10 for attractiveness, fun, shared interest, sincerity, and intelligence.
+
 -Click the 'Predict' button to see whether it's a match or not.
 
 ## Libraries Used
