@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speed Dating</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('/static/lac.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            position: relative;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6); /* Fond semi-transparent qui couvre toute la page */
+            z-index: 1;
+        }
+        .content {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+            border-radius: 10px;
+            background: transparent;
+        }
+        .form-control {
+            background: rgba(255, 255, 255, 0.7); /* Rendre les champs de formulaire semi-transparents */
+            border: none;
+        }
+        .error {
+            color: red;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="content text-center">
+        <h1 class="mb-4">Speed Dating</h1>
+        <form id="DatingForm" action="{{ url_for('predication') }}" method="post" onsubmit="return validateForm()">
+            <div class="form-group">
+                <label for="attractiveness">Attractiveness (0-10)</label>
+                <input type="number" class="form-control" id="attractiveness" name="Attractivness" placeholder="Attractivness" min="0" max="10" required>
+            </div>
+            <div class="form-group">
+                <label for="fun">Fun (0-10)</label>
+                <input type="number" class="form-control" id="fun" name="fun" placeholder="Fun" min="0" max="10" required>
+            </div>
+            <div class="form-group">
+                <label for="shared-interest">Shared Interest (0-10)</label>
+                <input type="number" class="form-control" id="shared-interest" name="Shar" placeholder="Shared Interest" min="0" max="10" required>
+            </div>
+            <div class="form-group">
+                <label for="sincerity">Sincerity (0-10)</label>
+                <input type="number" class="form-control" id="sincerity" name="Sinc" placeholder="Sincerity" min="0" max="10" required>
+            </div>
+              <div class="form-group">
+                <label for="intelligence">Intelligence (0-10)</label>
+                <input type="number" class="form-control" id="intelligence" name="Intel" placeholder="Intelligence" min="0" max="10" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Predict</button>
+        </form>
+        <p id="responseMessage" class="mt-3">{{ prediction_text }}</p>
+        <p class="error" id="errorMessage">Please enter values between 0 and 10.</p>
+    </div>
+    <!-- Include Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function validateForm() {
+            var isValid = true;
+            var inputs = document.querySelectorAll('input[type="number"]');
+            for (var i = 0; i < inputs.length; i++) {
+                if (inputs[i].value < 0 || inputs[i].value > 10) {
+                    isValid = false;
+                    document.getElementById('errorMessage').style.display = 'block';
+                }
+            }
+            return isValid;
+        }
+    </script>
+</body>
+</html>
