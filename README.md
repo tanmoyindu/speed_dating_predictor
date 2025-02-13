@@ -14,7 +14,7 @@ To run this project locally, follow these steps:
 1. **Clone the repository:**
    Open your terminal or command prompt and run the following command to clone the repository:
    
-   git clone https://github.com/your-username/speed-dating-predictor.git
+   git clone https://github.com/tanmoyindu/speed_dating_predictor.git
    
    cd speed-dating-predictor
 3. **Create a Virtual Environment:**
